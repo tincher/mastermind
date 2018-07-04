@@ -339,6 +339,40 @@ function getConnection()
 //werte spendende funktionen
 
 
+
+function getColorNameForValue($value) {
+    switch ($value) {
+        case 0:
+            return "rot";
+            break;
+        case 1:
+            return "pink";
+            break;
+        case 2:
+            return "gelb";
+            break;
+        case 3:
+            return "grün";
+            break;
+        case 4:
+            return "türkis";
+            break;
+        case 5:
+            return "blau";
+            break;
+        case 6:
+            return "lila";
+            break;
+        case 7:
+            return "braun";
+            break;
+        default:
+            return "fehler";
+    }
+}
+
+
+
 // der hexcode für die eingegebene zahl wird zurückgegeben (für die tabelle)
 function getColorCodeForValue($value)
 {
@@ -362,10 +396,10 @@ function getColorCodeForValue($value)
             return "0000FF";
             break;
         case 6:
-            return "FFF000";
+            return "8800FF";
             break;
         case 7:
-            return "F000FF";
+            return "663300";
             break;
         default:
             return "000000";
@@ -554,7 +588,7 @@ function printInputTools()
         for ($j = 0; $j < 8; $j++) {
 
             // value ist die aktuelle "farbe" nur halt als zahl und da wir ab 0 anfangen, muss 1 draufgezählt werden
-            $shown_value = $j + 1;
+            $shown_value = getColorNameForValue($j);
 
             // colorcode für die auswahlmöglichkeiten
             $colorCode = getColorCodeForValue($j);
