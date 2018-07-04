@@ -1,7 +1,6 @@
 <html>
 
 <body>
-<form action="mastermind.php" method="post" id="form1">
 
 <?php
 
@@ -136,6 +135,8 @@ function createGamePage() {
     createInputTools();
 }
 
+ich ziehs mir rüber, weil ich glaub dass eingepennt bist xd guts nächtle mein hase
+
 function createHighscorePage(){
     $name = $_POST['username'];
     $score = 99;
@@ -180,20 +181,22 @@ function printHighscores($highscores){
 function createInputForName()
 {
 
-    echo "<form action='highscore.php' method='post' id='highscore_form'>";
+    echo "<form action='mastermind.php' method='post' id='highscore_form'>";
 
+    echo "<input type='text' name='username' value='guest'>";
 
-		echo "<input type='text' name='username' value='guest'>";
+	echo "<button type='submit' form='highscore_form' value='Submit'>Submit</button>";
 
-		echo "<button type='submit' form='highscore_form' value='Submit'>Submit</button>";
-
-		echo "</form>";
+	echo "</form>";
 	}
 
 
 
 	function createInputTools()
     {
+
+        echo "<form action='mastermind.php' method='post' id='form1'>";
+
         // schleife von 0 bis 3 für die 4 auswahlelemente für die einzelnen "bobbel"
         for ($i = 0; $i < 4; $i++) {
 
@@ -225,15 +228,16 @@ function createInputForName()
 
             echo "</select>";
         }
+
+        echo "<button type='submit' form='form1' value='Submit'>Submit</button>";
+
+        echo "</form>";
+
     }
 
     ?>
 
 
-    <!--  button zum übertragen der eingegebenen daten  -->
-    <button type="submit" form="form1" value="Submit">Submit</button>
-
-</form>
 
 </body>
 
