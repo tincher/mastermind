@@ -74,7 +74,6 @@ function createHighscorePage()
 
     // gibt alle highscores aus
     printHighscores(getHighscores());
-
 }
 
 
@@ -138,7 +137,7 @@ function runningGameManager()
         // gibt die highscore seite aus, also die seite mit den highscores und dem eingabefeld für den eigenen score
         createHighscorePage();
 
-        // else wird aufgerufen, wenn das spiel weiterläuft
+    // else wird aufgerufen, wenn das spiel weiterläuft
     } else {
 
         // falls der currentTry gesetzt ist, wird dieser um 1 erhöht
@@ -170,8 +169,6 @@ function manageTries()
         // auch 1 weniger, aus dem gleichen grund wie max tries, 2 zeilen drüber
         $_SESSION['currentTry'] = 0;
     }
-
-
 }
 
 // verarbeitet die vom nutzer eingegebenen daten, also seine auswahl wird gespeichert und die indikatoren werden
@@ -192,7 +189,6 @@ function evaluateGame()
 
         // nun wird an die eigentliche try-list der eben neu erstellte eintrag zugewiesen
         $_SESSION['tryList'][] = $newTryListEntry;
-
     }
 }
 
@@ -222,7 +218,6 @@ function checkPoints()
 
             // die lokale mastercombination wird an der stelle i auf -1 gesetzt um mehrfache treffer zu verhindern
             $masterCombination[$i] = -1;
-
         }
     }
 
@@ -248,7 +243,6 @@ function checkPoints()
                 continue 2;
             }
         }
-
     }
 
     // falls kein treffer entsteht soll das result trotzdem etwas beinhalten, also wird das result auf -1 gesetzt
@@ -256,7 +250,6 @@ function checkPoints()
 
         //leeres result wird auf -1 gesetzt
         $result = "-1";
-
     }
 
     // das result wird zurückgegeben
@@ -285,7 +278,6 @@ function submitHighscore($username, $score)
 
     // die connection wird wieder geschloßen
     $conn->close();
-
 }
 
 // alle highscores werden zurückgegeben
@@ -314,8 +306,8 @@ function getConnection()
 {
     // daten für die verbindung werden zugewiesen
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "mastermind";
+    $password = "quentin187";
     $dbname = "mastermind";
 
     // connection wird hergestellt
@@ -326,7 +318,6 @@ function getConnection()
 
         // fehlermeldung
         echo "<p>Connection failed</p>";
-
     } else {
 
         //connection wird zurückgegeben
@@ -340,7 +331,8 @@ function getConnection()
 
 
 
-function getColorNameForValue($value) {
+function getColorNameForValue($value)
+{
     switch ($value) {
         case 0:
             return "rot";
@@ -504,7 +496,6 @@ function printTrylistBeautiful()
 
         // wrapper div wird geschlossen
         echo "</div>";
-
     }
 }
 
@@ -536,13 +527,10 @@ function printHighscores($highscores)
 
         // reihe wird geschlossen
         echo "</tr>";
-
     }
 
     // tabelle wird geschlossen
     echo "</table>";
-
-
 }
 
 
@@ -609,7 +597,6 @@ function printInputTools()
 
     // form wird geschlossen
     echo "</form>";
-
 }
 
 ?>
