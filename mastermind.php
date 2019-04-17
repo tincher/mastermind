@@ -269,11 +269,12 @@ function submitHighscore($username, $score)
     $conn = getConnection();
 
     // mysql query wird erstellt
-    $myquery = 'insert into `highscore` (`name`, `score`, `date`) values ("$username", $score, now());';
+    $myquery = 'insert into `highscore` (`name`, `score`, `date`) values ("' . $username . '", ' . $score . ', now());';
 
-    // die string query wird übersetzt und an die datenbank aus $conn geschickt
-    if ($conn->query($myquery)) {
+    if ($conn->query($myquery) === true) {
         echo "<p>Highscore wurde erfolgreich in Datenbank eingetragen</p>";
+    } else {
+        echo "Error: " . $conn->error . "</br>" . $myquery;
     }
 
     // die connection wird wieder geschloßen
