@@ -2,6 +2,14 @@
 
 
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118979494-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118979494-4');
+    </script>
+
     <link rel="stylesheet" href="main.css">
 </head>
 
